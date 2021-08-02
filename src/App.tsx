@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import { allReducers } from "./reducers";
+import GlobalStyles from "./styles/globalStyles";
+import TopBar from "./components/TopBar";
+import Colors from "./components/Colors";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const store = createStore(allReducers);
+
+const App = () => {
+    return (
+        <Provider store={store}>
+            <GlobalStyles />
+            <TopBar />
+            <Colors />
+        </Provider>
+    );
+};
 
 export default App;
