@@ -1,5 +1,6 @@
 {
     "name": "color-palette-generator",
+    "author": "Richard William",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
